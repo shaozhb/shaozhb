@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>04-BTC-协议 | 邵志彬的blog</title>
+  <title>08-BTC-挖矿 | 邵志彬的blog</title>
 
   
   <meta name="author" content="Kevin Shao">
   
 
   
-  <meta name="description" content="double spending attackBlock header    version    hash of previous block header    Merkle root hash    target    nonce
-Block body    transaction list
-f">
+  <meta name="description" content="#全节点
+
+一直在线在本地硬盘上维护完整的区块链信息在内存里维护UTXO集合，以便快速检验交易的正确性监听比特币网络上的交易信息，验证每个交易的合法性决定哪些交易会被打包到区块里监听别的矿工挖出来的区块，验证其合法性挖矿
+
+决定沿着哪条链挖下去？当出现等长的分叉的时候，选择哪一个分叉？
+
+
+#轻节点">
   
 
   
@@ -24,7 +29,7 @@ f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="04-BTC-协议"/>
+  <meta property="og:title" content="08-BTC-挖矿"/>
 
   <meta property="og:site_name" content="邵志彬的blog"/>
 
@@ -69,14 +74,14 @@ f">
 
   
     
-    <h3 class="article-title"><span>04-BTC-协议</span></h3>
+    <h3 class="article-title"><span>08-BTC-挖矿</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/shaozhb/2024/06/04/04-BTC-协议/" rel="bookmark">
-        <time class="entry-date published" datetime="2024-06-04T03:26:33.000Z">
+      <a href="/shaozhb/2024/06/04/08-BTC-挖矿/" rel="bookmark">
+        <time class="entry-date published" datetime="2024-06-04T09:32:17.000Z">
           2024-06-04
         </time>
       </a>
@@ -89,23 +94,18 @@ f">
   <div class="article-content">
     <div class="entry">
       
-        <p>double spending attack<br>Block header<br>    version<br>    hash of previous block header<br>    Merkle root hash<br>    target<br>    nonce</p>
-<p>Block body<br>    transaction list</p>
-<p>full node<br>也叫fully validating node，保存所有信息<br>light node</p>
-<p>distributed consensus<br>distributed hash table</p>
-<p>FLP impossibility result<br> asynchronous，，网络时延没有上限，及时有一个faulty，也无法达成共识</p>
-<p>CAP Theorem,所有分布式系统，不可能达成三个<br>Consistency<br>Availability<br>Partition tolerance</p>
-<p>Paxos，满足consistency</p>
-<p>consensus in Bitcoin 比特币中的共识<br>hyperledger fabric</p>
-<p>sybil attack女巫攻击<br>超级计算机大量生成账户，进行攻击</p>
-<p>H(block header)&lt;&#x3D;target<br>nonce 4bytes</p>
-<p>double spending 双花</p>
-<p>longest valid chain 最长合法连</p>
-<p>forking attack分叉攻击，通过往区块链中插入区块，来回滚已经发生的交易</p>
-<p>orphan block<br>区块链在正常情况下也会分叉，等长合法连会维持一段时间，直到一个胜出。其它的变成orphan block，被丢弃</p>
-<p>block reward<br>出币奖励。谁来决定发行货币</p>
-<p>coinbase transaction<br>50BTC-&gt;25BTC-&gt;12.5BTC</p>
-<p>mining挖矿，争夺记账权<br>digital gold<br>miner矿工</p>
+        <p>#全节点</p>
+<blockquote>
+<p>一直在线<br>在本地硬盘上维护完整的区块链信息<br>在内存里维护UTXO集合，以便快速检验交易的正确性<br>监听比特币网络上的交易信息，验证每个交易的合法性<br>决定哪些交易会被打包到区块里<br>监听别的矿工挖出来的区块，验证其合法性<br>挖矿</p>
+<blockquote>
+<p>决定沿着哪条链挖下去？<br>当出现等长的分叉的时候，选择哪一个分叉？</p>
+</blockquote>
+</blockquote>
+<p>#轻节点</p>
+<blockquote>
+<p>不是一直在线<br>不用保存整个区块链，只要保存每个区块的块头<br>不用保存全部交易，只保存与自己相关的交易<br>无法检测大多数交易的合法性，只能检测与自己相关的那些交易的合法性<br>无法检测网上发布的区块的正确性<br>可以验证挖矿的难度<br>只能检测哪个是最长链，不知道哪个是最长合法链</p>
+</blockquote>
+<p>#挖矿设备<br>CPU<br>GPU<br>ASIC:Application Specific Integrated Circuit专用集成电路</p>
 
       
     </div>

@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>04-BTC-协议 | 邵志彬的blog</title>
+  <title>07-BTC-挖矿难度 | 邵志彬的blog</title>
 
   
   <meta name="author" content="Kevin Shao">
   
 
   
-  <meta name="description" content="double spending attackBlock header    version    hash of previous block header    Merkle root hash    target    nonce
-Block body    transaction list
-f">
+  <meta name="description" content="H(block header)&amp;lt;&amp;#x3D;target调整target值，调整难度SHA-256 2的256次方
+difficutty&amp;#x3D;difficulty_1_target&amp;#x2F;target
+每2016个区块调整一下难度
+201610&amp;#x2F;(2460)&amp;#x3D;14">
   
 
   
@@ -24,7 +25,7 @@ f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="04-BTC-协议"/>
+  <meta property="og:title" content="07-BTC-挖矿难度"/>
 
   <meta property="og:site_name" content="邵志彬的blog"/>
 
@@ -69,14 +70,14 @@ f">
 
   
     
-    <h3 class="article-title"><span>04-BTC-协议</span></h3>
+    <h3 class="article-title"><span>07-BTC-挖矿难度</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/shaozhb/2024/06/04/04-BTC-协议/" rel="bookmark">
-        <time class="entry-date published" datetime="2024-06-04T03:26:33.000Z">
+      <a href="/shaozhb/2024/06/04/07-BTC-挖矿难度/" rel="bookmark">
+        <time class="entry-date published" datetime="2024-06-04T08:21:58.000Z">
           2024-06-04
         </time>
       </a>
@@ -89,23 +90,11 @@ f">
   <div class="article-content">
     <div class="entry">
       
-        <p>double spending attack<br>Block header<br>    version<br>    hash of previous block header<br>    Merkle root hash<br>    target<br>    nonce</p>
-<p>Block body<br>    transaction list</p>
-<p>full node<br>也叫fully validating node，保存所有信息<br>light node</p>
-<p>distributed consensus<br>distributed hash table</p>
-<p>FLP impossibility result<br> asynchronous，，网络时延没有上限，及时有一个faulty，也无法达成共识</p>
-<p>CAP Theorem,所有分布式系统，不可能达成三个<br>Consistency<br>Availability<br>Partition tolerance</p>
-<p>Paxos，满足consistency</p>
-<p>consensus in Bitcoin 比特币中的共识<br>hyperledger fabric</p>
-<p>sybil attack女巫攻击<br>超级计算机大量生成账户，进行攻击</p>
-<p>H(block header)&lt;&#x3D;target<br>nonce 4bytes</p>
-<p>double spending 双花</p>
-<p>longest valid chain 最长合法连</p>
-<p>forking attack分叉攻击，通过往区块链中插入区块，来回滚已经发生的交易</p>
-<p>orphan block<br>区块链在正常情况下也会分叉，等长合法连会维持一段时间，直到一个胜出。其它的变成orphan block，被丢弃</p>
-<p>block reward<br>出币奖励。谁来决定发行货币</p>
-<p>coinbase transaction<br>50BTC-&gt;25BTC-&gt;12.5BTC</p>
-<p>mining挖矿，争夺记账权<br>digital gold<br>miner矿工</p>
+        <p>H(block header)&lt;&#x3D;target<br>调整target值，调整难度<br>SHA-256 2的256次方</p>
+<p>difficutty&#x3D;difficulty_1_target&#x2F;target</p>
+<p>每2016个区块调整一下难度</p>
+<p>2016<em>10&#x2F;(24</em>60)&#x3D;14天</p>
+<p>target&#x3D;target*actualtime&#x2F;expectedtime<br>上调和下调，最多增大4倍，最小缩小四分之一</p>
 
       
     </div>

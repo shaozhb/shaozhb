@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>04-BTC-协议 | 邵志彬的blog</title>
+  <title>04-BTC-实现 | 邵志彬的blog</title>
 
   
   <meta name="author" content="Kevin Shao">
   
 
   
-  <meta name="description" content="double spending attackBlock header    version    hash of previous block header    Merkle root hash    target    nonce
-Block body    transaction list
-f">
+  <meta name="description" content="transaction-based ledger基于事务的分类账，例如比特币UTXO Unspent Transaction Output
+total inputs&amp;#x3D;total outputs1BTC          0.99BTC
+transaction fee0.01BTC作为交易费">
   
 
   
@@ -24,7 +24,7 @@ f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="04-BTC-协议"/>
+  <meta property="og:title" content="04-BTC-实现"/>
 
   <meta property="og:site_name" content="邵志彬的blog"/>
 
@@ -69,14 +69,14 @@ f">
 
   
     
-    <h3 class="article-title"><span>04-BTC-协议</span></h3>
+    <h3 class="article-title"><span>04-BTC-实现</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/shaozhb/2024/06/04/04-BTC-协议/" rel="bookmark">
-        <time class="entry-date published" datetime="2024-06-04T03:26:33.000Z">
+      <a href="/shaozhb/2024/06/04/04-BTC-实现/" rel="bookmark">
+        <time class="entry-date published" datetime="2024-06-04T06:41:40.000Z">
           2024-06-04
         </time>
       </a>
@@ -89,23 +89,18 @@ f">
   <div class="article-content">
     <div class="entry">
       
-        <p>double spending attack<br>Block header<br>    version<br>    hash of previous block header<br>    Merkle root hash<br>    target<br>    nonce</p>
-<p>Block body<br>    transaction list</p>
-<p>full node<br>也叫fully validating node，保存所有信息<br>light node</p>
-<p>distributed consensus<br>distributed hash table</p>
-<p>FLP impossibility result<br> asynchronous，，网络时延没有上限，及时有一个faulty，也无法达成共识</p>
-<p>CAP Theorem,所有分布式系统，不可能达成三个<br>Consistency<br>Availability<br>Partition tolerance</p>
-<p>Paxos，满足consistency</p>
-<p>consensus in Bitcoin 比特币中的共识<br>hyperledger fabric</p>
-<p>sybil attack女巫攻击<br>超级计算机大量生成账户，进行攻击</p>
-<p>H(block header)&lt;&#x3D;target<br>nonce 4bytes</p>
-<p>double spending 双花</p>
-<p>longest valid chain 最长合法连</p>
-<p>forking attack分叉攻击，通过往区块链中插入区块，来回滚已经发生的交易</p>
-<p>orphan block<br>区块链在正常情况下也会分叉，等长合法连会维持一段时间，直到一个胜出。其它的变成orphan block，被丢弃</p>
-<p>block reward<br>出币奖励。谁来决定发行货币</p>
-<p>coinbase transaction<br>50BTC-&gt;25BTC-&gt;12.5BTC</p>
-<p>mining挖矿，争夺记账权<br>digital gold<br>miner矿工</p>
+        <p>transaction-based ledger<br>基于事务的分类账，例如比特币<br>UTXO Unspent Transaction Output</p>
+<p>total inputs&#x3D;total outputs<br>1BTC          0.99BTC</p>
+<p>transaction fee<br>0.01BTC作为交易费，小费</p>
+<p>出块奖励<br>每隔10分钟产生1个区块<br>21万区块<em>10分钟&#x2F;（25小时</em>60分钟*365天）&#x3D;4年</p>
+<p>account-based ledger<br>基于账户的分类账，例如以太坊，不需要显示币的来源</p>
+<p>Bernoulli trail：a random experiment with binary outcome<br>具有二元结果的随机实验</p>
+<p>Bernoulli process:a sequence of independent Bernoulli trials memoryless<br>Poisson process<br>实验很多，每次实验成功的很小</p>
+<p>exponential distribution<br>progress free<br>如果挖了10分钟没挖到，下面可能还是需要平均10分钟才能挖到</p>
+<p>比特币总量<br>21万<em>50+21万</em>52+21万*12.5+…&#x3D;2100万</p>
+<p>Bitcon is secured by mining</p>
+<p>confirmation 缺省是6次确认</p>
+<p>selfish mining 攻击，偷偷挖7个，然后一起发布</p>
 
       
     </div>
